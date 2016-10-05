@@ -1,6 +1,7 @@
 public class Guitar {
 
   private String serialNumber;
+
   private String builder;
   private String model;
   private String type;
