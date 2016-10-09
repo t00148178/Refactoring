@@ -13,7 +13,7 @@ public class Inventory {
                         String builder, String model,
                         String type, String backWood, String topWood) {
     Guitar guitar = new Guitar(serialNumber, price, Builder.FENDER,
-            model, type, backWood, topWood);
+            model, Type.ELECTRIC, backWood, topWood);
     guitars.add(guitar);
   }
   public Guitar getGuitar(String serialNumber) {
@@ -25,7 +25,7 @@ public class Inventory {
     }
     return null;
   }
-    
+
 
   public Guitar search(Guitar searchGuitar) {
     for (Iterator i = guitars.iterator(); i.hasNext(); ) {
@@ -40,7 +40,7 @@ public class Inventory {
       if ((model != null) && (!model.equals("")) &&
               (!model.equals(guitar.getModel())))
         continue;
-      String type = searchGuitar.getType();
+      Type type = searchGuitar.getType();
       if ((type != null) && (!searchGuitar.equals("")) &&
               (!type.equals(guitar.getType())))
         continue;
